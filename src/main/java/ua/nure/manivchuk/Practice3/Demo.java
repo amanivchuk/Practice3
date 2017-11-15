@@ -2,6 +2,7 @@ package ua.nure.manivchuk.Practice3;
 
 import ua.nure.manivchuk.Practice3.Part1.Part1;
 import ua.nure.manivchuk.Practice3.Part2.Part2;
+import ua.nure.manivchuk.Practice3.Part3.Part3;
 
 /**
  * Created by nec on 15.11.17.
@@ -24,5 +25,11 @@ public class Demo {
         System.out.println("======= Part 2 ===========");
         Part2 part2 = new Part2();
         part2.getMinAndMaxWords();
+        System.out.println();
+
+        /*======= Part 3 ===========*/
+        System.out.println("======= Part 3 ===========");
+        Part3 part3 = new Part3();
+        System.out.println(part3.wordInUpperCase());
     }
 }
