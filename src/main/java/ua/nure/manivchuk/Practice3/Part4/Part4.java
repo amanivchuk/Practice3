@@ -32,8 +32,4 @@ public class Part4 {
 
         return Arrays.toString(digest);
     }
-    public static void main(String[] args) throws NoSuchAlgorithmException {
-        System.out.println(new Part4().hash("password", "SHA-256"));
-        System.out.println(new Part4().hash("passwort", "SHA-256"));
-    }
 }

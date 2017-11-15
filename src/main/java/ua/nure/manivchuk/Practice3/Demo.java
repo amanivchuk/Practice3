@@ -3,6 +3,9 @@ package ua.nure.manivchuk.Practice3;
 import ua.nure.manivchuk.Practice3.Part1.Part1;
 import ua.nure.manivchuk.Practice3.Part2.Part2;
 import ua.nure.manivchuk.Practice3.Part3.Part3;
+import ua.nure.manivchuk.Practice3.Part4.Part4;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by nec on 15.11.17.
@@ -31,5 +34,16 @@ public class Demo {
         System.out.println("======= Part 3 ===========");
         Part3 part3 = new Part3();
         System.out.println(part3.wordInUpperCase());
+
+        /*====== Part 4 ============*/
+        System.out.println("======= Part 4 ===========");
+        Part4 part4 = new Part4();
+        try {
+            System.out.println(part4.hash("password", "SHA-256"));
+            System.out.println(part4.hash("passwort", "SHA-256"));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
     }
 }
