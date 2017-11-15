@@ -1,4 +1,4 @@
-package ua.nure.manivchuk.Practice3.Part1;
+package ua.nure.manivchuk.Practice3.utils;
 
 import java.io.*;
 import java.util.ArrayList;
