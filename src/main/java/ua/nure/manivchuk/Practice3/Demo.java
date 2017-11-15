@@ -4,6 +4,7 @@ import ua.nure.manivchuk.Practice3.Part1.Part1;
 import ua.nure.manivchuk.Practice3.Part2.Part2;
 import ua.nure.manivchuk.Practice3.Part3.Part3;
 import ua.nure.manivchuk.Practice3.Part4.Part4;
+import ua.nure.manivchuk.Practice3.Part5.Part5;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -44,6 +45,20 @@ public class Demo {
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
         }
+
+        /*====== Part 5 ============*/
+        System.out.println("======= Part 5 ===========");
+        Part5 part5 = new Part5();
+        StringBuffer stringBuffer = new StringBuffer();
+
+        for(int i = 0 ; i <= 100; i++){
+            String tmp = part5.decimal2Roman(i);
+            stringBuffer.append(i).append(" ====> ").append(tmp).append(" ====> ").append(part5.roman2Decimal(tmp)).append("\n");
+        }
+        System.out.println(stringBuffer.toString());
+        /*
+        System.out.println(part5.decimal2Roman(4));
+        System.out.println(part5.roman2Decimal("II"));*/
 
     }
 }

@@ -80,88 +80,56 @@ public class Part5 {
     }*/
 
 
+    static String[] Rome = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+    static int[] Arab = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
-    static String[] Rome = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X",
-            "IX", "V", "IV", "I" };
-    static int[] Arab = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
+    static int numbers[] = {1, 4, 5, 9, 10, 50, 100, 500, 1000};
+    static String letters[] = {"I", "IV", "V", "IX", "X", "L", "C", "D", "M"};
 
-    static int numbers[]  = {1, 4, 5, 9, 10, 50, 100, 500, 1000 };
+    public int roman2Decimal(String rome) {
 
-    static String letters[]  = { "I", "IV", "V", "IX", "X", "L", "C", "D", "M"};
-
-        public static int roman2Decimal(String rome) {
-
-            StringBuffer romeNumber = new StringBuffer(rome);
-            int arabNumber = 0, i = 0;
-// Проверяем переданную строку на наличие символов
-            if (romeNumber.length() > 0) {
-                while (true) {
-                    do {
-
-                        if (Rome[i].length() <= romeNumber.length()) {
-                            // Выделяем из строки подстроку и сравниваем со
-                            // значением из массива Arab
-                            if (Rome[i].equals(romeNumber.substring(0,
-                                    Rome[i].length()))) {
-                                // После чего прибавляем число соответствующее
-                                // индексу элемента римской цифры из массива Arab
-                                arabNumber += Arab[i];
-                                // и удаляем из строки римскую цифру
-                                romeNumber.delete(0, Rome[i].length());
-                                if (romeNumber.length() == 0)
-                                    return arabNumber;
-                            } else
-                                break;
+        StringBuffer romeNumber = new StringBuffer(rome);
+        int arabNumber = 0, i = 0;
+        // Проверяем переданную строку на наличие символов
+        if (romeNumber.length() > 0) {
+            while (true) {
+                do {
+                    if (Rome[i].length() <= romeNumber.length()) {
+                        // Выделяем из строки подстроку и сравниваем со
+                        // значением из массива Arab
+                        if (Rome[i].equals(romeNumber.substring(0, Rome[i].length()))) {
+                            // После чего прибавляем число соответствующее
+                            // индексу элемента римской цифры из массива Arab
+                            arabNumber += Arab[i];
+                            // и удаляем из строки римскую цифру
+                            romeNumber.delete(0, Rome[i].length());
+                            if (romeNumber.length() == 0)
+                                return arabNumber;
                         } else
                             break;
-                    } while (true && romeNumber.length() != 0);
-                    i++;
-                }
+                    } else
+                        break;
+                } while (romeNumber.length() != 0);
+                i++;
             }
-            return 0;
-
         }
-
-
-    private static int letterToNumber(char letter)
-    {
-
-        switch (letter) {
-            case 'I':  return 1;
-            case 'V':  return 5;
-
-            case 'X':  return 10;
-            case 'L':  return 50;
-            case 'C':  return 100;
-            case 'D':  return 500;
-            case 'M':  return 1000;
-            default:   return -1;
-        }
+        return 0;
     }
-    public static String convertIntegerToRoman(int number)
-    {
+
+    public String decimal2Roman(int number) {
         String romanValue = "";
 
         int N = number;
 
-        while ( N > 0 )
-        {
-            for (int i = 0; i < numbers.length; i++)
-            {
-                if ( N < numbers[i] )
-                {
-                    N -= numbers[i-1];
-                    romanValue += letters[i-1];
+        while (N > 0) {
+            for (int i = 0; i < numbers.length; i++) {
+                if (N < numbers[i]) {
+                    N -= numbers[i - 1];
+                    romanValue += letters[i - 1];
                     break;
                 }
             }
         }
         return romanValue;
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(convertIntegerToRoman(4));
-        System.out.println(roman2Decimal("II"));
     }
 }
