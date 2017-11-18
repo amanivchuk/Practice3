@@ -83,9 +83,8 @@ public class Part5 {
     static String[] Rome = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
     static int[] Arab = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
 
-    static int numbers[] = {1, 4, 5, 9, 10, 50, 100, 500, 1000};
-    static String letters[] = {"I", "IV", "V", "IX", "X", "L", "C", "D", "M"};
-
+    static int[] numbers = {1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000};
+    static String[] letters = {"I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M"};
     public int roman2Decimal(String rome) {
 
         StringBuffer romeNumber = new StringBuffer(rome);
