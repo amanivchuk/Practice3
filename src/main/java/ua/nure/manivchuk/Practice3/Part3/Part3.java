@@ -29,7 +29,7 @@ public class Part3 {
 
                 stringBuffer.append(getUpperLetter(matcher.group())).append(" ");
             }
-            stringBuffer.append("\n");
+            stringBuffer.append(System.lineSeparator());
         }
         return stringBuffer.toString();
     }
@@ -38,9 +38,4 @@ public class Part3 {
         char ch = str.charAt(0);
         return str.replace(str.charAt(0), Character.toUpperCase(ch));
     }
-
-   /* public static void main(String[] args) {
-        Part3 part3 = new Part3();
-        System.out.println(part3.wordInUpperCase());
-    }*/
 }

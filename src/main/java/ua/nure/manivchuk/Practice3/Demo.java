@@ -56,9 +56,5 @@ public class Demo {
             stringBuffer.append(i).append(" ====> ").append(tmp).append(" ====> ").append(part5.roman2Decimal(tmp)).append("\n");
         }
         System.out.println(stringBuffer.toString());
-        /*
-        System.out.println(part5.decimal2Roman(4));
-        System.out.println(part5.roman2Decimal("II"));*/
-
     }
 }

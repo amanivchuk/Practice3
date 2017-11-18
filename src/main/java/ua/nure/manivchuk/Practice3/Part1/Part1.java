@@ -28,7 +28,7 @@ public class Part1 {
         for(String str : stringList){
             String[] list = str.split(";");
             if(!list[0].equals("Login") && !list[1].equals("Name") && !list[2].equals("Email") ){
-                stringBuffer.append(list[0]).append(" ==> ").append(list[list.length-1]).append("\n");
+                stringBuffer.append(list[0]).append(" ==> ").append(list[list.length-1]).append(System.lineSeparator());
             }
         }
 //        System.out.println(stringBuffer.toString());
@@ -49,7 +49,7 @@ public class Part1 {
         for(String str : stringList){
             String[] list = str.split(";");
             if(!list[0].equals("Login") && !list[1].equals("Name") && !list[2].equals("Email") ){
-                stringBuffer.append(list[1]).append(" (email: ").append(list[list.length-1]).append(")\n");
+                stringBuffer.append(list[1]).append(" (email: ").append(list[list.length-1]).append(")").append(System.lineSeparator());
             }
         }
 //        System.out.println(stringBuffer.toString());
@@ -89,7 +89,7 @@ public class Part1 {
                 if(!(i >= familyList.size()-1)){
                     stringBuffer.append(", ");
                 }else {
-                    stringBuffer.append("\n");
+                    stringBuffer.append(System.lineSeparator());
                 }
             }
         }
@@ -111,7 +111,7 @@ public class Part1 {
         Random random = new Random();
 
        for(int i = 1 ; i < stringList.size(); i++){
-           stringBuffer.append(stringList.get(i)).append(";").append(random.nextInt(10000)+1000).append("\n");
+           stringBuffer.append(stringList.get(i)).append(";").append(random.nextInt(10000)+1000).append(System.lineSeparator());
        }
 //        System.out.println(stringBuffer.toString());
         return stringBuffer.toString();
