@@ -2,9 +2,7 @@ package ua.nure.manivchuk.Practice3.Part1;
 
 import ua.nure.manivchuk.Practice3.utils.ReadFile;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,8 +55,8 @@ public class Part1 {
     }
 
     public String convert3(){
-        /*
-        Output of convert3
+
+       /* Output of convert3
             mail.ru ==> ivanov, bush
             google.com ==> petrov, obama
        */
@@ -97,6 +95,40 @@ public class Part1 {
         return stringBuffer.toString();
     }
 
+    public static String another_convert3(String input) {
+        input.replaceAll(input , "");
+        Pattern pattern = Pattern.compile("(.*);(.*);(.*)@(.*)", Pattern.UNICODE_CHARACTER_CLASS | Pattern.MULTILINE);
+        Matcher matcher = pattern.matcher(input);
+        StringBuffer result = new StringBuffer();
+        Map<String, ArrayList<String>> map = new TreeMap<>();
+
+        Set<String> set = new LinkedHashSet<>();
+        while (matcher.find()) {
+            set.add(matcher.group(4));
+        }
+        for (String s : set) {
+            pattern = Pattern.compile("(.*);.*;.*@" + s);
+            matcher = pattern.matcher(input);
+            ArrayList<String> list = new ArrayList<>();
+            while (matcher.find()) {
+                list.add(matcher.group(1));
+            }
+
+            map.put(s, list);
+        }
+
+        for(Map.Entry<String, ArrayList<String>> res : map.entrySet()){
+            result.append(res.getKey()).append(" ==> ");
+            for(int i = 0; i < res.getValue().size(); i++){
+                result.append(res.getValue().get(i));
+                if(i + 1 < res.getValue().size()){
+                    result.append(", ");
+                }
+            }
+            result.append(System.lineSeparator());
+        }
+        return result.toString();
+    }
     public String convert4(){
         /*
         * Login;Name;Email;Password

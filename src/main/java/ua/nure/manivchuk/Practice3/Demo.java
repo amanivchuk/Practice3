@@ -5,6 +5,7 @@ import ua.nure.manivchuk.Practice3.Part2.Part2;
 import ua.nure.manivchuk.Practice3.Part3.Part3;
 import ua.nure.manivchuk.Practice3.Part4.Part4;
 import ua.nure.manivchuk.Practice3.Part5.Part5;
+import ua.nure.manivchuk.Practice3.utils.Util_test;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -24,6 +25,11 @@ public class Demo {
         System.out.println(p3);
         String p4 = part1.convert4();
         System.out.println(p4);
+
+        /*Another realization for Part 1.3 */
+        String s = Util_test.getInput("src/main/resources/input.txt");
+        System.out.println("Methode: another_convert3");
+        System.out.println(Part1.another_convert3(s));
 
         /*======= Part 2 ===========*/
         System.out.println("======= Part 2 ===========");
