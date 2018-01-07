@@ -3,17 +3,19 @@ package ua.nure.manivchuk.Practice3;
 import ua.nure.manivchuk.Practice3.Part1.Part1;
 import ua.nure.manivchuk.Practice3.Part2.Part2;
 import ua.nure.manivchuk.Practice3.Part3.Part3;
+import ua.nure.manivchuk.Practice3.Part3.Part3_2;
 import ua.nure.manivchuk.Practice3.Part4.Part4;
 import ua.nure.manivchuk.Practice3.Part5.Part5;
 import ua.nure.manivchuk.Practice3.utils.Util_test;
 
+import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by nec on 15.11.17.
  */
 public class Demo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         /*======= Part 1 ===========*/
         System.out.println("======= Part 1 ===========");
         Part1 part1 = new Part1();
@@ -39,8 +41,9 @@ public class Demo {
 
         /*======= Part 3 ===========*/
         System.out.println("======= Part 3 ===========");
-        Part3 part3 = new Part3();
-        System.out.println(part3.wordInUpperCase());
+//        Part3 part3 = new Part3();
+//        System.out.println(part3.wordInUpperCase());
+            Part3_2.main(new String[]{});
 
         /*====== Part 4 ============*/
         System.out.println("======= Part 4 ===========");

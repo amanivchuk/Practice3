@@ -28,7 +28,7 @@ public class Part3_2 {
 
 
             while (matcher.find()) {
-                if (matcher.group().length() > 1) {
+                if (matcher.group().length() >= 1) {
                     result.replace(matcher.start(), matcher.start() + 1, matcher.group().substring(0, 1).toUpperCase());
                 }
             }
